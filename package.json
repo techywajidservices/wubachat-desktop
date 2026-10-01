@@ -1,0 +1,40 @@
+{
+  "name": "wubachat-desktop",
+  "version": "1.0.0",
+  "description": "Wubachat Official Desktop Application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "keywords": ["wubachat", "whatsapp", "desktop"],
+  "author": "Wubachat",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.2.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.wubachat.desktop",
+    "productName": "Wubachat",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Wubachat"
+    }
+  }
+}
